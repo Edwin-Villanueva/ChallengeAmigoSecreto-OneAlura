@@ -38,6 +38,35 @@ function agregarAmigo() {
       listaDeAmigos.push(nombre);
       //console.log(listaDeAmigos);
       limpiarEntrada();
+
+      // se genera la lista de amigos en el HTML
+      generarListaAmigos();
     }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Funciones y pasos  para actualizar la lista de amigos
+
+function crearLiYAgregar(amigo, lista) {
+  let nuevoLi = document.createElement("li");
+  nuevoLi.textContent = amigo;
+  lista.appendChild(nuevoLi);
+}
+
+function generarListaAmigos() {
+  //Obtener el elemento de la lista :
+  const listaHtml = document.getElementById("listaAmigos");
+
+  //Limpiar la lista existente:
+
+  listaHtml.innerHTML = "";
+
+  // Crear elemento li y agregar a la lista general
+
+  //Iterar sobre el arreglo
+
+  for (const amigo of listaDeAmigos) {
+    crearLiYAgregar(amigo, listaHtml);
   }
 }
