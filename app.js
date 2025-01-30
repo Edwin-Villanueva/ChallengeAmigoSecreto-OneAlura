@@ -70,3 +70,23 @@ function generarListaAmigos() {
     crearLiYAgregar(amigo, listaHtml);
   }
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Funciones y pasos  para sortear la lista de amigos
+
+function mostrarAmigoSorteado(amigo) {
+  const elementoHtml = document.getElementById("resultado");
+  elementoHtml.innerHTML = amigo;
+}
+
+function sortearAmigo() {
+  // Antes de sortear, comprobar si el array amigos no está vacío
+  if (listaDeAmigos.length > 0) {
+    let indice = Math.floor(Math.random() * listaDeAmigos.length);
+    //console.log(indice);
+    let nombre = listaDeAmigos[indice];
+    mostrarAmigoSorteado(nombre);
+  } else {
+    alert("no hay amigos para sortear");
+  }
+}
